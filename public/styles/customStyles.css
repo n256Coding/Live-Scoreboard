@@ -1,0 +1,34 @@
+.defaultUpdateBtn{
+    background-color: transparent;
+    transition: .5s;
+    height: 100%;
+    width: 100%;
+    color: #000000;
+    text-decoration: none;
+}
+
+.defaultUpdateBtn:hover{
+    background-color: #00b0ff;
+    color: #ffffff;
+}
+
+.defaultUpdateBtn:active{
+    width: 95%;
+    height: 95%;
+}
+
+.defaultUpdateBtn div {
+    width: 100%;
+    text-align: center;
+}
+
+.defaultUpdateBtn div img{
+    width: 50%;
+    height: 50%;
+}
+
+.defaultTextField {
+    width: 100%;
+    height: 250px;
+    font-size: 32px;
+}
