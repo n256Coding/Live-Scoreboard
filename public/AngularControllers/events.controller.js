@@ -20,15 +20,17 @@ angular.module('mainModule').controller('eventController', ['$scope', '$http', '
             $scope.isEventSelected = true;
             $scope.selectedEvent.eventType = eventTypeParam;
             $scope.selectedEvent.live = true;
-            $http.post('/events', $scope.selectedEvent).then(function (data) {
-                alert('Success!');
-            });
+            socket.emit('newevent', $scope.selectedEvent);
+            //$http.post('/events', $scope.selectedEvent).then(function (data) {
+            //    alert('Success!');
+            //});
 
         };
-        socket.on('news', function (data) {
+
+        socket.on('gotevent', function (data) {
                 alert(data.toString());
                 console.log(data);
-            });
+        });
 
 
 }]);
