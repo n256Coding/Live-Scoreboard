@@ -7,7 +7,7 @@ angular.module('mainModule').controller('eventController', ['$scope', '$http', '
     function ($scope, $http, socket) {
         $scope.selectedEvent = {};
         $scope.isEventSelected = false;
-
+/*
         $http.get('/events/recent').then(function (data) {
             $scope.recentEvents = data.data;
         });
@@ -15,22 +15,31 @@ angular.module('mainModule').controller('eventController', ['$scope', '$http', '
         $http.get('/events/live').then(function (data) {
             $scope.liveEvents = data.data;
         });
-
+*/
         $scope.newEvent = function (eventTypeParam) {
             $scope.isEventSelected = true;
             $scope.selectedEvent.eventType = eventTypeParam;
             $scope.selectedEvent.live = true;
-            socket.emit('newevent', $scope.selectedEvent);
-            //$http.post('/events', $scope.selectedEvent).then(function (data) {
-            //    alert('Success!');
-            //});
-
+            socket.emit('new_event_req', $scope.selectedEvent);
+            alert('Success!');/*
+            $http.post('/events', $scope.selectedEvent).then(function (data) {
+                alert('Success!');
+            });
+            */
         };
-
-        socket.on('gotevent', function (data) {
-                alert(data.toString());
-                console.log(data);
+/*
+        socket.on('eventupdate', function (data) {
+            console.log(data);
+        });
+*/
+        socket.on('live_event_res', function (data) {
+            $scope.liveEvents = data;
         });
 
+        socket.on('recent_event_res', function (data) {
+            $scope.recentEvents = data;
+        });
 
+        socket.emit('live_event_req', {});
+        socket.emit('recent_event_req', {});
 }]);
