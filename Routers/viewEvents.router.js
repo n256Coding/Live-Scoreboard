@@ -4,9 +4,9 @@
 'use strict';
 
 var express = require('express');
-var app = require('../server');
-var io = require('socket.io').listen();
 var Router = express.Router();
+var server = require('../server');
+var io = null;
 
 var sportEvents= [];
 var event1 = {'name':'event1',
@@ -46,8 +46,9 @@ sportEvents.push(event1);
 sportEvents.push(event2);
 sportEvents.push(event3);
 
-Router.get('/', function (req, res) {
-    res.json(sportEvents);
+Router.get('/*', function (req, res) {
+
+    //res.json(sportEvents);
 });
 
 Router.get('/live', function (req, res) {
@@ -62,7 +63,7 @@ Router.get('/live', function (req, res) {
     }
     doFilter(function () {
         res.json(tempEvent);
-    })
+    });
 });
 
 Router.get('/recent', function (req, res) {
@@ -82,14 +83,28 @@ Router.get('/recent', function (req, res) {
 
 Router.post('/', function (req, res) {
     sportEvents.push(req.body);
-    res.json(sportEvents);
+    //res.json(sportEvents);
 
+    console.log('Hello World');
+    const io = req.app.get('socketio');
+    io.on('connection', function (socket) {
+        socket.emit('eventupdate', sportEvents);
+    });
 });
-
+/*
 io.on('connection', function (socket) {
     console.log('Starting to emit');
-    socket.emit('news', { hello : 'world' });
+    socket.emit('gotevent', { hello : 'world' });
     console.log('Emited');
 });
+*/
+
+exports.foo = function (req, res) {
+    console.log('Hello World');
+    io = req.app.get('socketio');
+    io.on('connection', function (socket) {
+        socket.emit('gotevent', { hello : 'world' });
+    });
+};
 
 module.exports = Router;

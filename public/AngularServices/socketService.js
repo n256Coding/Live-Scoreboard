@@ -3,15 +3,7 @@
  */
 'use strict';
 
-angular.module('mainModule').factory('socket', [function () {
-    var socket = io.connect('http://localhost:3000');
-
-    return{
-        on : function (eventName, callback) {
-            socket.on(eventName, callback);
-        },
-        emit : function (eventName, data) {
-            socket.emit(eventName, data);
-        }
-    };
+angular.module('mainModule').factory('socket', ['socketFactory',
+    function (socketFactory) {
+    return socketFactory();
 }]);
