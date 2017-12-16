@@ -18,7 +18,7 @@ angular.module('mainModule').config(['$routeProvider', '$locationProvider',
             templateUrl : 'AngularViews/newEventViewer.html',
             controller: 'eventController'
         }).otherwise({
-            templateUrl : 'AngularViews/newEventViewer.html',
+            templateUrl : 'AngularViews/eventEditorView.html',
             controller: 'eventController'
         });
         $locationProvider.html5Mode(true);

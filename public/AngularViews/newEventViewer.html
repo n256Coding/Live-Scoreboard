@@ -1,8 +1,8 @@
  <div>
-    <h2>New Event</h2>
+    <div class="page_title">New Event</div>
     <md-grid-list md-cols="2" md-cols-md="4" md-cols-lg="6" md-row-height="1:1">
         <md-grid-tile layout-margin="10">
-                <a class="defaultUpdateBtn" md-ink-ripple="true" href="#">
+                <a class="default_btn event_btn" md-ink-ripple="true" href="#">
                     <div>
                         <h4>Cricket</h4>
                         <img src="images/Cricket.png" layout-margin="5">
@@ -10,7 +10,7 @@
                 </a>
         </md-grid-tile>
         <md-grid-tile layout-margin="10">
-                <a class="defaultUpdateBtn" md-ink-ripple="true">
+                <a class="default_btn event_btn" md-ink-ripple="true">
                     <div>
                         <h4>Football</h4>
                         <img src="images/Soccer%20Ball.png">
@@ -18,7 +18,7 @@
                 </a>
         </md-grid-tile>
         <md-grid-tile layout-margin="10">
-                <a class="defaultUpdateBtn" md-ink-ripple="true">
+                <a class="default_btn event_btn" md-ink-ripple="true">
                     <div>
                         <h4>Rugby</h4>
                         <img src="images/Rugby%20ball.png" layout-fill>
@@ -26,7 +26,7 @@
                 </a>
         </md-grid-tile>
         <md-grid-tile layout-margin="10">
-                <a class="defaultUpdateBtn" md-ink-ripple="true">
+                <a class="default_btn" md-ink-ripple="true">
                     <div>
                         <h4>Custom</h4>
                         <img src="images/Winner.jpg" layout-fill>
@@ -34,7 +34,7 @@
                 </a>
         </md-grid-tile>
         <md-grid-tile layout-margin="10">
-                <a class="defaultUpdateBtn" md-ink-ripple="true">
+                <a class="default_btn" md-ink-ripple="true">
                     <div>
                         <h4>Custom</h4>
                         <img src="images/Winner.jpg" layout-fill>
@@ -42,7 +42,7 @@
                 </a>
         </md-grid-tile>
         <md-grid-tile layout-margin="10">
-                <a class="defaultUpdateBtn" md-ink-ripple="true">
+                <a class="default_btn" md-ink-ripple="true">
                     <div>
                         <h4>Custom</h4>
                         <img src="images/Winner.jpg" layout-fill>
@@ -51,47 +51,36 @@
         </md-grid-tile>
     </md-grid-list>
     <br/><br/>
-    <div class="flex flex-col">
-        <h3>Team Details</h3>
-        <md-grid-list md-cols="5" md-cols-md="5" md-row-height="4:2">
-            <md-grid-tile md-colspan="2">
-                <md-input-container>
-                    <label for="txtTeam1">Team Name</label>
-                    <input type="text" ng-model="selectedEvent.team1" class="defaultTextField" id="txtTeam1">
-                </md-input-container>
-            </md-grid-tile>
-            <md-grid-tile md-colspan="1">
-                <h2> VS </h2>
-            </md-grid-tile>
-            <md-grid-tile md-colspan="2">
-                <md-input-container>
-                    <label for="txtTeam2">Team Name</label>
-                    <input type="text" ng-model="selectedEvent.team2" class="defaultTextField" id="txtTeam2">
-                </md-input-container>
-            </md-grid-tile>
-        </md-grid-list>
-        <div>
-            <h2>Event Information</h2>
-            <md-grid-list md-cols="2" md-row-height="1:1">
-                <md-grid-tile>
-                    <md-input-container>
-                        <label for="startTime">Start At</label>
-                        <input type="text" class="defaultTextField" id="startTime" ng-model="selectedEvent.startTime">
-                    </md-input-container>
-                </md-grid-tile>
-                <md-grid-tile>
-                    <md-input-container>
-                        <label for="endTime">End At</label>
-                        <input type="text" class="defaultTextField" id="endTime" ng-model="selectedEvent.endTime">
-                    </md-input-container>
-                </md-grid-tile>
-                <md-grid-tile>
-                    <md-input-container>
-                        <!--TODO Need to set calendar date picker -->
-                    </md-input-container>
-                </md-grid-tile>
-            </md-grid-list>
-        </div>
-        <a class="md-button md-raised md-primary" ng-click="newEvent()">Next</a>
-    </div>
+     <md-grid-list md-cols="5" md-cols-md="5" md-row-height="4:2">
+         <md-grid-tile md-colspan="2">
+             <md-input-container>
+                 <label for="txtTeam1">Team Name</label>
+                 <input type="text" ng-model="selectedEvent.team1" class="defaultTextField" id="txtTeam1">
+             </md-input-container>
+         </md-grid-tile>
+         <md-grid-tile md-colspan="1">
+             <h2> VS </h2>
+         </md-grid-tile>
+         <md-grid-tile md-colspan="2">
+             <md-input-container>
+                 <label for="txtTeam2">Team Name</label>
+                 <input type="text" ng-model="selectedEvent.team2" class="defaultTextField" id="txtTeam2">
+             </md-input-container>
+         </md-grid-tile>
+         <md-grid-tile md-colspan="5">
+             <div class="match_info">
+                 <div class="title">
+                     <span>Match Info</span>
+                 </div>
+                 <div class="content">
+                     <p>
+                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                         Pellentesque vehicula, leo at dictum cursus, eros orci lacinia sem,
+                         a euismod quam mauris vel nisl. Vestibulum ante ipsum primis in faucibus.
+                     </p>
+                 </div>
+             </div>
+         </md-grid-tile>
+     </md-grid-list>
+     <a class="md-button md-raised md-primary" ng-click="newEvent()">Next</a>
 </div>

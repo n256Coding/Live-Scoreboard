@@ -1,31 +1,65 @@
-<div class="mdl-grid demo-content">
-    <div class="demo-charts mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
-        <div class="mdl-grid">
-            <h2>Live Events</h2>
-        </div>
-        <div class="mdl-grid">
-            <div class="demo-card-event mdl-card mdl-shadow--2dp mdl-cell mdl-cell--4--col"
-                 ng-repeat="event in liveEvents">
-                <div class="mdl-card__title mdl-card--expand">
-                    <h4>
-                        {{event.team1}} vs {{event.team2}}<br>
-                        {{event.date}}<br>
-                        {{event.time}}<br>
-                    </h4>
-                    <h2>
-                        {{event.score}}
-                    </h2>
-                </div>
-                <div class="mdl-card__actions mdl-card--border">
-                    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-                        View Details
-                    </a>
-                    <div class="mdl-layout-spacer"></div>
-                    <i class="material-icons">event</i>
-                </div>
+        <div class="section_card">
+            <div class="page_title">
+                <h2>Live Events</h2>
+            </div>
+            <div>
+                <md-grid-list md-cols="1" md-cols-md="3" md-cols-lg="3" md-row-height="340px">
+                    <md-grid-tile layout-margin="10" ng-repeat="event in liveEvents">
+                        <div class="event_card">
+                            <div class="event_card_teams">
+                                <h2>{{event.team1}}</h2>
+                                <h5>vs</h5>
+                                <h2>{{event.team2}}</h2>
+                            </div>
+                            <div class="event_card_logo">
+                                <img src="images/Cricket.png">
+                            </div>
+                            <div class="event_card_score">
+                                <h2>
+                                    {{event.score}}
+                                </h2>
+                            </div>
+                            <div class="event_card_explore">
+                                <a class="md-button md-raised md-shadow-animated md-primary" md-ink-ripple="true">Explore</a>
+                            </div>
+                        </div>
+                    </md-grid-tile>
+                </md-grid-list>
             </div>
         </div>
-    </div>
+        <!--
+        <md-grid-list md-cols="3" md-cols-md="3" md-col-sm="1" md-row-height="1:1">
+            <md-grid-tile md-colspan="1" ng-repeat="event in liveEvents">
+                <div class="event_card">
+                    <div class="event_card_teams">
+                        <h4>
+                            {{event.team1}} vs {{event.team2}}<br>
+                            {{event.date}}<br>
+                            {{event.time}}<br>
+                        </h4>
+                        <h2>
+                            {{event.score}}
+                        </h2>
+                    </div>
+                    <div class="event_card_logo">
+                        <img src="images/Cricket.png">
+                    </div>
+                    <div class="event_card_score">
+
+                    </div>
+                    <div class="event_card_explore">
+
+                    </div>
+                </div>
+                -->
+        <!--
+            </md-grid-tile>
+    <md-grid-tile>
+        <h2>Hello World</h2>
+    </md-grid-tile>
+</md-grid-list>
+-->
+    <!--
     <div class="demo-charts mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
         <div class="mdl-grid">
             <h2>Recent Events</h2>
@@ -106,4 +140,4 @@
             </div>
         </div>
     </div>
-</div>
+    -->
