@@ -1,21 +1,21 @@
 # Live-Scoreboard
 A simple web application to show live score of sport events.
 
-###Introduction
+### Introduction
 This is a prototype version of web application and does not have database connections and proper backend. 
 This system is for demonstration purpose only and not properly developed for real world usage.
-#####Technologies
+##### Technologies
 * Node JS
 * Angular JS 1.6
 
-####Getting Started
+#### Getting Started
 * Make sure that you have installed nodeJS, bower and git correctly.
 * Also make sure that you have working internet connection with 
 access to googleapis.com, cdnjs.cloudflare.com and code.getmdl.io
 * Navigate into folder which contains package.json in the project with command prompt (terminal)
 
 
-####Configuring Instructions
+#### Configuring Instructions
 1. Run these commands.
 
 ``````
@@ -30,9 +30,9 @@ Server will start using port 3000. In case of port conflicts, please change defa
 
 3. Enter ``localhost:3000`` URL in a web browser. 
 (Modern browsers are recommended Ex. > Firefox 8, > Chrome 52, Edge)
-#####Note: 
+##### Note: 
 * In case of port conflicts, if you have changed the port number, please enter that port number instead 3000 in the URL in step 3
-###Default login credentials
+### Default login credentials
 ````
 Username: admin
 Password: admin
