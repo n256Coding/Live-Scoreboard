@@ -188,3 +188,31 @@
     font-size: 30px;
     color: #ffffff;
 }
+
+.dashboard_btn {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 70%;
+    transition: .5s;
+    height: 100%;
+    color: #000000;
+    text-decoration: none;
+    text-align: center;
+}
+
+.dashboard_btn:hover{
+    background-color: #00b0ff;
+    color: #ffffff;
+}
+
+.dashboard_btn:active{
+    width: 65%;
+    height: 95%;
+}
+
+.dashboard_btn i {
+    font-size: 110px;
+}
+
+.dashboard_btn .dashboard_btn_name {
+    font-size: 50px;
+}

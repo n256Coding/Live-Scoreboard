@@ -4,14 +4,14 @@
 <md-grid-tile md-rowspan="2" md-colspan="2" md-colspan-sm="1" md-colspan-xs="1">
     <md-input-container class="md-block" flex-gt-sm="">
         <label>Username</label>
-        <input ng-model="user.firstName">
+        <input type="text" ng-model="user.firstName">
     </md-input-container>
 
     <md-input-container class="md-block" flex-gt-sm="">
         <label>Password</label>
-        <input ng-model="theMax" type="password">
+        <input ng-model="user.password" type="password">
     </md-input-container>
-    <md-button class="md-raised md-primary">Let me sign in</md-button>
+    <md-button class="md-raised md-primary" ng-click="login()">Let me sign in</md-button>
     <h4>Don't have account?</h4>
     <md-button class="md-raised">Lets create new one</md-button>
 </md-grid-tile>

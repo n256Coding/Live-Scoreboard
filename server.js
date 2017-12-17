@@ -31,11 +31,12 @@ var sportEvents= [
                     'name':'event1',
                     'team1':'Lion',
                     'team2':'Dogs',
+                    'team1_score':26,
+                    'team2_score':32,
                     'description':'',
                     'date':'2017 August 23',
                     'startTime':'7 PM',
                     'endTime':'10 PM',
-                    'score':'25',
                     'live':false
                 },
                 {
