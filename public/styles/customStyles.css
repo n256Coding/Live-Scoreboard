@@ -53,11 +53,11 @@
 .match_info .title {
     padding: 15px;
     font-size: 32px;
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .match_info .content{
-    padding-left: 10px;
-    padding-right: 10px;
+    padding: 5px 10px 0 10px;
     width: 95%;
 }
 
@@ -215,4 +215,42 @@
 
 .dashboard_btn .dashboard_btn_name {
     font-size: 50px;
+}
+
+.explore_event_team_info {
+    text-align: center;
+}
+
+.explore_event_team_info h4 {
+    width: 100%;
+    font-weight: 200;
+    font-size: 80px;
+    line-height: 0.8;
+}
+
+.explore_event_team_info h5 {
+    width:100%;
+    font-weight: 600;
+    font-size: 60px;
+}
+
+.chat_area {
+    overflow: auto;
+    height: 150px;
+    width:100%;
+}
+
+.chat_item {
+    background-color: #3E4EB8;
+    color: #ffffff;
+    border-radius: 10px;
+    font-size: 14px;
+    height: 20px;
+    margin: 10px;
+    padding: 10px;
+    transition: .6s;
+}
+
+.chat_input_area {
+    height: 60px;
 }

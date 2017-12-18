@@ -79,6 +79,7 @@
 
     <!-- Import Angular Services -->
     <script src="AngularServices/userControl.service.js"></script>
+    <script src="AngularServices/eventControl.service.js"></script>
     <script src="AngularServices/socketService.js"></script>
 
     <!-- Import ngRoute -->
@@ -112,28 +113,28 @@
       </header>
 
       <div class="demo-drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
-        <header class="demo-drawer-header">
+        <header class="demo-drawer-header" ng-controller="userController">
           <img src="images/user.jpg" class="demo-avatar">
           <div class="demo-avatar-dropdown">
-            <span id="logged_name"> </span>
+            <span ng-bind="user.firstName"></span>
             <div class="mdl-layout-spacer"></div>
             <button id="accbtn" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
               <i class="material-icons" role="presentation">arrow_drop_down</i>
               <span class="visuallyhidden">Accounts</span>
             </button>
             <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="accbtn">
-              <li class="mdl-menu__item">hello@example.com</li>
-              <li class="mdl-menu__item">info@example.com</li>
-              <li class="mdl-menu__item"><i class="material-icons">add</i>Add another account...</li>
+              <a href="login" ng-hide="isLogged" style="text-decoration: none;"><li class="mdl-menu__item">Log In</li></a>
+              <a ng-show="isLogged" href="dashboard" style="text-decoration: none;"><li class="mdl-menu__item">Dashboard</li></a>
+              <a ng-show="isLogged" ng-click="logout()"><li class="mdl-menu__item">Log Out</li></a>
             </ul>
           </div>
         </header>
 
 
         <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
-          <a class="mdl-navigation__link md-button md-ink-ripple" href="login"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">home</i>Login</a>
-          <a class="mdl-navigation__link md-button md-ink-ripple active" href="eventViewer"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">inbox</i>Events</a>
-          <a class="mdl-navigation__link md-button md-ink-ripple active" href="scoreUpdater"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">inbox</i>Score Update</a>
+          <a class="mdl-navigation__link md-button md-ink-ripple" href="eventViewer"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">home</i>Home</a>
+          <a class="mdl-navigation__link md-button md-ink-ripple active" href="eventViewer"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">inbox</i>Live</a>
+          <a class="mdl-navigation__link md-button md-ink-ripple active" href="scoreUpdater"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">inbox</i>Recent</a>
           <a class="mdl-navigation__link md-button md-ink-ripple active" href="newEvent"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">inbox</i>New Event</a>
           <div class="mdl-layout-spacer"></div>
           <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">help_outline</i><span class="visuallyhidden">Help</span></a>
@@ -142,9 +143,7 @@
 
       </div>
 
-      <main class="mdl-layout__content mdl-color--grey-100" ng-view>
-
-      </main>
+      <main class="mdl-layout__content mdl-color--grey-100" ng-model="sdf" ng-view=""/>
 
     </div>
     <script src="modules/material-design-lite/material.js"></script>

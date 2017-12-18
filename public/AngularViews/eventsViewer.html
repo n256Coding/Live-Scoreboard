@@ -1,4 +1,7 @@
-        <div class="section_card">
+<div class="page_title">
+    See them all!
+</div>
+<div class="section_card" data-ng-init="initializeExploreInfo()">
             <div class="page_title">
                 <h2>Live Events</h2>
             </div>
@@ -16,11 +19,11 @@
                             </div>
                             <div class="event_card_score">
                                 <h2>
-                                    {{event.score}}
+                                    {{event.team1_score}} / {{event.team2_score}}
                                 </h2>
                             </div>
                             <div class="event_card_explore">
-                                <a class="md-button md-raised md-shadow-animated md-primary" md-ink-ripple="true">Explore</a>
+                                <a class="md-button md-raised md-shadow-animated md-primary" md-ink-ripple="true" ng-click="exploreEvent(event.eventId, event.live)">Explore</a>
                             </div>
                         </div>
                     </md-grid-tile>

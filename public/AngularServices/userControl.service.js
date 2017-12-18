@@ -3,7 +3,7 @@
  */
 'use strict';
 
-angular.module('mainModule').factory('userControlService', function () {
+angular.module('mainModule').factory('userControlService', ['$rootScope', function ($rootScope) {
     var user = {};
 
     function getUser() {
@@ -12,10 +12,20 @@ angular.module('mainModule').factory('userControlService', function () {
 
     function setUser(userVar) {
         user = userVar;
+        $rootScope.$broadcast('event:loggedIn');
+    }
+
+    function clearUser() {
+        user = {};
+        user.firstName = 'Not logged';
+        user.password = '';
+        $rootScope.$broadcast('event:loggedOut');
+        return getUser;
     }
 
     return{
-        get : getUser,
-        set : setUser
+        getUser : getUser,
+        setUser : setUser,
+        clearUser : clearUser
     }
-});
+}]);

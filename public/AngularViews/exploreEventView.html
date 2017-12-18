@@ -1,0 +1,72 @@
+<br><br>
+<md-grid-list md-cols="4" md-cols-sm="4" md-cols-md="4" md-row-height="200px">
+    <md-grid-tile md-colspan="1">
+        <div class="explore_event_team_info">
+            <h4>{{exploredEvent.team1}}</h4>
+            <h5>{{exploredEvent.team1_score}}</h5>
+        </div>
+    </md-grid-tile>
+    <md-grid-tile md-colspan="1">
+        <h2>vs</h2>
+    </md-grid-tile>
+    <md-grid-tile md-colspan="1">
+        <div class="explore_event_team_info">
+            <h4>{{exploredEvent.team2}}</h4>
+            <h5>{{exploredEvent.team2_score}}</h5>
+        </div>
+    </md-grid-tile>
+    <md-grid-tile md-colspan="1">
+        <img src="images/Cricket.png" layout-margin="5">
+    </md-grid-tile>
+    <md-grid-tile md-colspan="4">
+        <div class="match_info">
+            <div class="title">
+                <span>Info Feed</span>
+            </div>
+            <div class="content">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Pellentesque vehicula, leo at dictum cursus, eros orci lacinia sem,
+                    a euismod quam mauris vel nisl. Vestibulum ante ipsum primis in faucibus.
+                </p>
+            </div>
+        </div>
+    </md-grid-tile>
+    <md-grid-tile md-colspan="2">
+        <div class="match_info">
+            <div class="title">
+                <span>Match Info</span>
+            </div>
+            <div class="content">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Pellentesque vehicula, leo at dictum cursus, eros orci lacinia sem,
+                    a euismod quam mauris vel nisl. Vestibulum ante ipsum primis in faucibus.
+                </p>
+            </div>
+        </div>
+    </md-grid-tile>
+    <md-grid-tile md-colspan="2">
+        <div class="match_info">
+            <div class="title">
+                <span>Chat Box</span>
+            </div>
+            <div class="content">
+                <div class="chat_area">
+                    <div class="chat_item" ng-repeat="chat in chatScriptCache track by chat.id">
+                        {{chat.name}}: {{chat.content}}
+                    </div>
+                </div>
+                <div class="chat_input_area">
+                    <md-input-container>
+                        <input type="text" ng-model="message.content" class="defaultTextField" id="txtTeam2">
+                    </md-input-container>
+                    <md-button class="md-fab md-mini" ng-click="sendMessage()">
+                        <!--<md-icon md-svg-icon="send" aria-label="send message"></md-icon>-->
+                        <i class="material-icons">send</i>
+                    </md-button>
+                </div>
+            </div>
+        </div>
+    </md-grid-tile>
+</md-grid-list>

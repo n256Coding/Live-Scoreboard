@@ -20,9 +20,12 @@ angular.module('mainModule').config(['$routeProvider', '$locationProvider',
         }).when('/dashboard', {
             templateUrl : 'AngularViews/dashboardView.html',
             controller: 'eventController'
+        }).when('/exploreEvent', {
+            templateUrl : 'AngularViews/exploreEventView.html',
+            controller: 'eventController'
         }).otherwise({
-            templateUrl : 'AngularViews/loginViewer.html',
-            controller: 'userController'
+            templateUrl : 'AngularViews/eventsViewer.html',
+            controller: 'eventController'
         });
         $locationProvider.html5Mode(true);
 }]);

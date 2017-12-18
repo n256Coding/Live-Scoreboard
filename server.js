@@ -28,6 +28,7 @@ server.listen(3000, function () {
 
 var sportEvents= [
                 {
+                    'eventId':'1397123702318',
                     'name':'event1',
                     'team1':'Lion',
                     'team2':'Dogs',
@@ -37,9 +38,11 @@ var sportEvents= [
                     'date':'2017 August 23',
                     'startTime':'7 PM',
                     'endTime':'10 PM',
-                    'live':false
+                    'live':false,
+                    'chat':[]
                 },
                 {
+                    'eventId':'1392323702318',
                     'name':'event2',
                     'team1':'Dogs',
                     'team2':'Cats',
@@ -48,18 +51,23 @@ var sportEvents= [
                     'startTime':'8 AM',
                     'endTime':'11 AM',
                     'score':'35',
-                    'live':false
+                    'live':false,
+                    'chat':[]
                 },
                 {
+                    'eventId':'1397124852318',
                     'name':'event1',
                     'team1':'Cats',
                     'team2':'Monkeys',
+                    'team1_score':35,
+                    'team2_score':26,
                     'description':'',
                     'date':'2017 October 27',
                     'startTime':'6 AM',
                     'endTime':'8 AM',
                     'score':'45',
-                    'live':true
+                    'live':true,
+                    'chat':[]
                 }
                 ];
 
@@ -86,6 +94,12 @@ io.on('connection', function (socket) {
         sportEvents.push(data);
         io.sockets.emit('live_event_res', getLiveSportEvents());
         io.sockets.emit('recent_event_res', getRecentSportEvents());
+    });
+    socket.on('chat_message_push_req', function (data) {
+        var event = sportEvents.filter(function (item) {
+                        return item.eventId = data.eventId;
+                    });
+
     });
 });
 
