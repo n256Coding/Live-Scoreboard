@@ -112,6 +112,12 @@ io.on('connection', function (socket) {
         }
         io.sockets.emit('live_event_res', getLiveSportEvents());
     });
+    socket.on('event_close_req', function (data) {
+        var index = sportEvents.findIndex(x => x.eventId == data.eventId);
+        sportEvents[index].live = false;
+        io.sockets.emit('live_event_res', getLiveSportEvents());
+        io.sockets.emit('recent_event_res', getRecentSportEvents());
+    });
 });
 
 module.exports = server;

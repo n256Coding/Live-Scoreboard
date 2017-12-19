@@ -23,6 +23,12 @@ angular.module('mainModule').config(['$routeProvider', '$locationProvider',
         }).when('/exploreEvent', {
             templateUrl : 'AngularViews/exploreEventView.html',
             controller: 'eventController'
+        }).when('/liveEvents', {
+            templateUrl : 'AngularViews/liveEventsView.html',
+            controller: 'eventController'
+        }).when('/recentEvents', {
+            templateUrl : 'AngularViews/recentEventView.html',
+            controller: 'eventController'
         }).when('/myEvents', {
             templateUrl : 'AngularViews/myEventsView.html',
             controller: 'eventController'

@@ -78,6 +78,19 @@ angular.module('mainModule').controller('eventController', ['$scope', '$http', '
             socket.emit('score_update_req', data);
         };
 
+        $scope.closeEvent = function (eventId) {
+            if(confirm('Do you want to close this event?')){
+                socket.emit('event_close_req', {'eventId':eventId});
+                $location.url('/dashboard');
+            }
+            $mdToast.show(
+                $mdToast.simple()
+                    .textContent('Simple Toast!')
+                    .position('top left')
+                    .hideDelay(3000)
+            );
+        };
+
         function clearScoreFields() {
             if($scope.score.team1 !== undefined)
                 $scope.score.team1.inc = '';
@@ -91,16 +104,16 @@ angular.module('mainModule').controller('eventController', ['$scope', '$http', '
 
         socket.on('live_event_res', function (data) {
             $scope.liveEvents = data;
-            if($scope.exploredEvent !== undefined){
+            if($scope.exploredEvent !== undefined && $scope.exploredEvent.live){
                 $scope.exploredEvent = eventService.refreshSelectedEvent(data, $scope.exploredEvent.eventId);
             }
         });
 
         socket.on('recent_event_res', function (data) {
             $scope.recentEvents = data;
-            //if($scope.exploredEvent !== undefined){
-            //    $scope.exploredEvent = eventService.refreshSelectedEvent(data, $scope.exploredEvent.eventId);
-            //}
+            if($scope.exploredEvent !== undefined && !$scope.exploredEvent.live){
+                $scope.exploredEvent = eventService.refreshSelectedEvent(data, $scope.exploredEvent.eventId);
+            }
         });
 
         socket.on('chat_message_res', function (data) {
