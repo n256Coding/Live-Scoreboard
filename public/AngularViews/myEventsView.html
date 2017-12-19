@@ -1,3 +1,62 @@
 <div class="page_title">
     My Events
 </div>
+<div class="section_card">
+    <div class="title">
+        Live Events
+    </div>
+    <div>
+        <md-grid-list md-cols="1" md-cols-md="3" md-cols-lg="3" md-row-height="340px">
+            <md-grid-tile layout-margin="10" ng-repeat="event in liveEvents">
+                <div class="event_card">
+                    <div class="event_card_teams">
+                        <h2>{{event.team1}}</h2>
+                        <h5>vs</h5>
+                        <h2>{{event.team2}}</h2>
+                    </div>
+                    <div class="event_card_logo">
+                        <img src="images/Cricket.png">
+                    </div>
+                    <div class="event_card_score">
+                        <h2>
+                            {{event.team1_score}} / {{event.team2_score}}
+                        </h2>
+                    </div>
+                    <div class="event_card_explore">
+                        <a class="md-button md-raised md-shadow-animated md-primary" md-ink-ripple="true" ng-click="triggerUpdateEvent(event.eventId)">Update</a>
+                    </div>
+                </div>
+            </md-grid-tile>
+        </md-grid-list>
+    </div>
+</div>
+
+<div class="section_card">
+    <div class="title">
+        Recent Events
+    </div>
+    <div>
+        <md-grid-list md-cols="1" md-cols-md="3" md-cols-lg="3" md-row-height="340px">
+            <md-grid-tile layout-margin="10" ng-repeat="event in recentEvents">
+                <div class="event_card">
+                    <div class="event_card_teams">
+                        <h2>{{event.team1}}</h2>
+                        <h5>vs</h5>
+                        <h2>{{event.team2}}</h2>
+                    </div>
+                    <div class="event_card_logo">
+                        <img src="images/Cricket.png">
+                    </div>
+                    <div class="event_card_score">
+                        <h2>
+                            {{event.team1_score}} / {{event.team2_score}}
+                        </h2>
+                    </div>
+                    <div class="event_card_explore">
+                        <a class="md-button md-raised md-shadow-animated md-primary" md-ink-ripple="true" ng-click="triggerUpdateEvent(event.eventId)" style="pointer-events: none;" ng-disabled="true">Update</a>
+                    </div>
+                </div>
+            </md-grid-tile>
+        </md-grid-list>
+    </div>
+</div>

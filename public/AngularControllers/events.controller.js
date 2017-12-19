@@ -11,6 +11,7 @@ angular.module('mainModule').controller('eventController', ['$scope', '$http', '
         $scope.isEventSelected = false;
         $scope.chatScriptCache = [];
         $scope.message = {};
+        $scope.score = {};
 
         console.log(eventService.getSelectedEvent());
         $scope.initializeExploreInfo = function () {
@@ -39,6 +40,10 @@ angular.module('mainModule').controller('eventController', ['$scope', '$http', '
             }
         };
 
+        $scope.setEventType = function (type) {
+            $scope.selectedEvent.type = type;
+        };
+
         $scope.exploreEvent = function(eventId, isLive) {
             if(isLive){
                 $scope.selectedEvent = $scope.liveEvents.filter(function (item) {
@@ -52,13 +57,50 @@ angular.module('mainModule').controller('eventController', ['$scope', '$http', '
             eventService.setSelectedEvent($scope.selectedEvent);
             $location.url('/exploreEvent');
         };
+        
+        $scope.triggerUpdateEvent = function (eventId) {
+            $scope.selectedEvent = $scope.liveEvents.filter(function (item) {
+                return item.eventId == eventId;
+            });
+            eventService.setSelectedEvent($scope.selectedEvent);
+            $location.url('/scoreUpdater');
+        };
+
+        $scope.updateScore = function (eventId, teamNumber, inc, isReduction) {
+            if(inc === undefined || inc.toString().trim() == ''){
+                inc = 1;
+            }
+            if(isReduction){
+                inc = parseInt(inc) * -1;
+            }
+            var data = {'eventId':eventId, 'teamNumber':teamNumber, 'inc':inc};
+            clearScoreFields();
+            socket.emit('score_update_req', data);
+        };
+
+        function clearScoreFields() {
+            if($scope.score.team1 !== undefined)
+                $scope.score.team1.inc = '';
+            if($scope.score.team1 !== undefined)
+                $scope.score.team1.dec = '';
+            if($scope.score.team2 !== undefined)
+                $scope.score.team2.inc = '';
+            if($scope.score.team2 !== undefined)
+                $scope.score.team2.dec = '';
+        }
 
         socket.on('live_event_res', function (data) {
             $scope.liveEvents = data;
+            if($scope.exploredEvent !== undefined){
+                $scope.exploredEvent = eventService.refreshSelectedEvent(data, $scope.exploredEvent.eventId);
+            }
         });
 
         socket.on('recent_event_res', function (data) {
             $scope.recentEvents = data;
+            //if($scope.exploredEvent !== undefined){
+            //    $scope.exploredEvent = eventService.refreshSelectedEvent(data, $scope.exploredEvent.eventId);
+            //}
         });
 
         socket.on('chat_message_res', function (data) {

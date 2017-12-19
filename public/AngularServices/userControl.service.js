@@ -5,6 +5,8 @@
 
 angular.module('mainModule').factory('userControlService', ['$rootScope', function ($rootScope) {
     var user = {};
+    var myLiveEvents = [];
+    var myRecentEvents = [];
 
     function getUser() {
         return user;
@@ -23,9 +25,29 @@ angular.module('mainModule').factory('userControlService', ['$rootScope', functi
         return getUser;
     }
 
+    function getMyLiveEvents() {
+        return myLiveEvents;
+    }
+
+    function setMyLiveEvents(events) {
+        myLiveEvents = events;
+    }
+
+    function getMyRecentEvents() {
+        return myRecentEvents;
+    }
+
+    function setMyRecentEvents(events) {
+        myRecentEvents = events;
+    }
+
     return{
         getUser : getUser,
         setUser : setUser,
-        clearUser : clearUser
+        clearUser : clearUser,
+        getMyLiveEvents : getMyLiveEvents,
+        setMyLiveEvents : setMyLiveEvents,
+        getMyRecentEvents : getMyRecentEvents,
+        setMyRecentEvents : setMyRecentEvents
     }
 }]);

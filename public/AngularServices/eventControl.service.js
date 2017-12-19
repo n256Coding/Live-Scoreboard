@@ -3,7 +3,7 @@
  */
 'use strict';
 
-angular.module('mainModule').factory('eventService', function () {
+angular.module('mainModule').factory('eventService', ['socket', function () {
     var chatScript = [];
     var selectedEvent = {};
 
@@ -32,12 +32,20 @@ angular.module('mainModule').factory('eventService', function () {
         return selectedEvent[0];
     }
 
+    function refreshSelectedEvent(data, eventId) {
+        var updatedEvent = data.filter(function (item) {
+            return item.eventId == eventId;
+        });
+        return updatedEvent[0];
+    }
+
     return{
         getUniqueId : getUniqueId,
         pushMessage : pushMessage,
         clearChatScript : clearChatScript,
         getChatScript : getChatScript,
         setSelectedEvent : setSelectedEvent,
-        getSelectedEvent : getSelectedEvent
+        getSelectedEvent : getSelectedEvent,
+        refreshSelectedEvent : refreshSelectedEvent
     }
-});
+}]);

@@ -34,10 +34,8 @@ var sportEvents= [
                     'team2':'Dogs',
                     'team1_score':26,
                     'team2_score':32,
-                    'description':'',
+                    'description':'This will be a good match because both teams well experienced!',
                     'date':'2017 August 23',
-                    'startTime':'7 PM',
-                    'endTime':'10 PM',
                     'live':false,
                     'chat':[]
                 },
@@ -46,11 +44,12 @@ var sportEvents= [
                     'name':'event2',
                     'team1':'Dogs',
                     'team2':'Cats',
-                    'description':'',
+                    'team1_score':21,
+                    'team2_score':35,
+                    'description':'Today is really fits for the match',
                     'date':'2018 January 22',
                     'startTime':'8 AM',
                     'endTime':'11 AM',
-                    'score':'35',
                     'live':false,
                     'chat':[]
                 },
@@ -100,6 +99,18 @@ io.on('connection', function (socket) {
                         return item.eventId = data.eventId;
                     });
 
+    });
+    socket.on('score_update_req', function (data) {
+        var index = sportEvents.findIndex(x => x.eventId == data.eventId);
+
+        if(data.teamNumber == 1){
+            console.log(sportEvents);
+            sportEvents[index].team1_score = parseInt(sportEvents[index].team1_score) + parseInt(data.inc);
+        }
+        else if(data.teamNumber == 2){
+            sportEvents[index].team2_score = parseInt(sportEvents[index].team2_score) + parseInt(data.inc);
+        }
+        io.sockets.emit('live_event_res', getLiveSportEvents());
     });
 });
 

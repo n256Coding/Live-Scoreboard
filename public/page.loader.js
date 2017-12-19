@@ -12,8 +12,8 @@ angular.module('mainModule').config(['$routeProvider', '$locationProvider',
             templateUrl : 'AngularViews/loginViewer.html',
             controller: 'userController'
         }).when('/scoreUpdater', {
-            templateUrl : 'AngularViews/cricketScoreUpdatorView.html',
-            controller: 'userController'
+            templateUrl : 'AngularViews/eventEditorView.html',
+            controller: 'eventController'
         }).when('/newEvent', {
             templateUrl : 'AngularViews/newEventViewer.html',
             controller: 'eventController'
@@ -22,6 +22,9 @@ angular.module('mainModule').config(['$routeProvider', '$locationProvider',
             controller: 'eventController'
         }).when('/exploreEvent', {
             templateUrl : 'AngularViews/exploreEventView.html',
+            controller: 'eventController'
+        }).when('/myEvents', {
+            templateUrl : 'AngularViews/myEventsView.html',
             controller: 'eventController'
         }).otherwise({
             templateUrl : 'AngularViews/eventsViewer.html',
