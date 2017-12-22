@@ -1,8 +1,10 @@
 .page_title {
     font-size: 80px;
     font-weight: 300;
-    margin: 50px 1px 30px 5px;
+    margin: 30px 1px 30px 5px;
     color: white;
+    text-shadow: 0 0 10px #000000;
+    line-height: 1;
 }
 
 .page_placeholder .background_image{
@@ -67,7 +69,7 @@
     margin: 10px;
     width: 95%;
     height: auto;
-    background-color: rgba(172, 232, 233, 0.65);
+    background-color: rgba(172, 232, 233, 0.7);
     border-radius: 5px;
 }
 
@@ -174,18 +176,22 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     width: 60%;
     margin: 0 0 0 20px ;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 5px;
 }
 
 .event_mod_card .team_name {
     font-size: 60px;
     font-weight: 500;
     text-align: center;
+    color: #ffffff;
 }
 
 .event_mod_card .score {
     font-size: 50px;
     font-weight: 800;
     text-align: center;
+    color: #ffffff;
 }
 
 .btn_score_up {
@@ -295,6 +301,7 @@
     margin: 10px;
     padding: 10px;
     transition: .6s;
+    width: auto;
 }
 
 .chat_input_area {

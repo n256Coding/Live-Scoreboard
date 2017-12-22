@@ -40,13 +40,22 @@ angular.module('mainModule').controller('eventController', ['$scope', '$http', '
         $scope.setEventType = function (type) {
             $scope.selectedEvent.type = type;
             if(type == 'Soccer'){
-                $scope.icon = 'images/Soccer Ball.png';
+                $scope.selectedEvent.icon = 'images/Soccer Ball.png';
             }
             else if(type == 'Cricket') {
-                $scope.icon = 'images/Cricket.png';
+                $scope.selectedEvent.icon = 'images/Cricket.png';
             }
             else if(type == 'Badminton') {
-                $scope.icon = 'images/badminton.png';
+                $scope.selectedEvent.icon = 'images/badminton.png';
+            }
+            else if(type == 'Rugby') {
+                $scope.selectedEvent.icon = 'images/Rugby%20ball.png';
+            }
+            else if(type == 'Basketball') {
+                $scope.selectedEvent.icon = 'images/Basketball.png';
+            }
+            else{
+                $scope.selectedEvent.icon = 'images/Winner.png';
             }
         };
 

@@ -54,7 +54,7 @@ var sportEvents= [
                     'eventId':'1397124852318',
                     'name':'event1',
                     'team1':'Cats',
-                    'team2':'Monkeys',
+                    'team2':'Monkey',
                     'team1_score':2,
                     'team2_score':1,
                     'type':'Badminton',
