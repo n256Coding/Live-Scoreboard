@@ -29,6 +29,9 @@ angular.module('mainModule').config(['$routeProvider', '$locationProvider',
         }).when('/myEvents', {
             templateUrl : 'AngularViews/myEventsView.html',
             controller: 'eventController'
+        }).when('/help', {
+            templateUrl : 'AngularViews/helpView.html',
+            controller: 'eventController'
         }).otherwise({
             templateUrl : 'AngularViews/eventsViewer.html',
             controller: 'eventController'

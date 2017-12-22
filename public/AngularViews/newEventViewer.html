@@ -7,7 +7,7 @@
     <div class="section_card">
     <md-grid-list md-cols="2" md-cols-md="4" md-cols-lg="6" md-row-height="1:1">
         <md-grid-tile layout-margin="10">
-                <a class="default_btn event_btn" md-ink-ripple="true" ng-click="setEventType('Cricket')">
+                <a class="default_btn event_btn" ng-class="{default_btn_selected : selectedEvent.type == 'Cricket'}" md-ink-ripple="true" ng-click="setEventType('Cricket')">
                     <div>
                         <h4>Cricket</h4>
                         <img src="images/Cricket.png" layout-margin="5">
@@ -15,7 +15,7 @@
                 </a>
         </md-grid-tile>
         <md-grid-tile layout-margin="10">
-                <a class="default_btn event_btn" md-ink-ripple="true" ng-click="setEventType('Soccer')">
+                <a class="default_btn event_btn" ng-class="{default_btn_selected : selectedEvent.type == 'Soccer'}" md-ink-ripple="true" ng-click="setEventType('Soccer')">
                     <div>
                         <h4>Football</h4>
                         <img src="images/Soccer%20Ball.png">
@@ -23,7 +23,7 @@
                 </a>
         </md-grid-tile>
         <md-grid-tile layout-margin="10">
-                <a class="default_btn event_btn" md-ink-ripple="true" ng-click="setEventType('Badminton')">
+                <a class="default_btn event_btn" ng-class="{default_btn_selected : selectedEvent.type == 'Badminton'}" md-ink-ripple="true" ng-click="setEventType('Badminton')">
                     <div>
                         <h4>Badminton</h4>
                         <img src="images/badminton.png" layout-fill>
@@ -31,7 +31,7 @@
                 </a>
         </md-grid-tile>
         <md-grid-tile layout-margin="10">
-            <a class="default_btn event_btn" md-ink-ripple="true" ng-click="setEventType('Rugby')">
+            <a class="default_btn event_btn" ng-class="{default_btn_selected : selectedEvent.type == 'Rugby'}" md-ink-ripple="true" ng-click="setEventType('Rugby')">
                 <div>
                     <h4>Rugby</h4>
                     <img src="images/Rugby%20ball.png" layout-fill>
@@ -39,7 +39,7 @@
             </a>
         </md-grid-tile>
         <md-grid-tile layout-margin="10">
-                <a class="default_btn event_btn" md-ink-ripple="true" ng-click="setEventType('Basketball')">
+                <a class="default_btn event_btn" ng-class="{default_btn_selected : selectedEvent.type == 'Basketball'}" md-ink-ripple="true" ng-click="setEventType('Basketball')">
                     <div>
                         <h4>Basket Ball</h4>
                         <img src="images/Basketball.png" layout-fill>
@@ -47,7 +47,7 @@
                 </a>
         </md-grid-tile>
         <md-grid-tile layout-margin="10">
-                <a class="default_btn event_btn" md-ink-ripple="true" ng-click="setEventType('Custom')">
+                <a class="default_btn event_btn" ng-class="{default_btn_selected : selectedEvent.type == 'Custom'}" md-ink-ripple="true" ng-click="setEventType('Custom')">
                     <div>
                         <h4>Custom</h4>
                         <img src="images/Winner.png" layout-fill>
