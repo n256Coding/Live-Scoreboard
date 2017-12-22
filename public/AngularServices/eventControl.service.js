@@ -1,6 +1,3 @@
-/**
- * Created by Nishan on 12/18/2017.
- */
 'use strict';
 
 angular.module('mainModule').factory('eventService', ['socket', function () {

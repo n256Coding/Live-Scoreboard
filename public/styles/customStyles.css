@@ -1,11 +1,25 @@
 .page_title {
     font-size: 80px;
     font-weight: 300;
-    margin: 50px 1px 50px 5px;
+    margin: 50px 1px 30px 5px;
+    color: white;
+}
+
+.page_placeholder .background_image{
+    width:100%;
+    height: 100%;
+    z-index: -10;
+    position: fixed;
+    background-image: url("../images/sport.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: blur(5px);
+    margin-left: -10px;
+    margin-top: -10px;
 }
 
 .default_btn{
-    background-color: transparent;
+    background-color: white;
     transition: .5s;
     height: 100%;
     width: 100%;
@@ -48,9 +62,11 @@
     margin: 10px;
     width: 95%;
     height: auto;
+    background-color: rgba(172, 232, 233, 0.65);
+    border-radius: 5px;
 }
 
-.match_info .title {
+.match_info .match_info_title {
     padding: 15px;
     font-size: 32px;
     box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -103,6 +119,7 @@
 .event_card_score h2 {
     font-size: 80px;
     font-weight: 700;
+    line-height: 0.8;
 }
 
 .event_card_explore {
@@ -126,21 +143,26 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     padding: 30px 30px 10px 30px;
     width: 100%;
-    height: 300px;
+    height: inherit;
+    margin-top:20px;
 }
 
 .section_card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    margin: 40px 20px 10px 20px;
+    margin: 20px 20px 10px 20px;
     width: 92%;
-    padding: 20px;
+    padding: 20px 20px 80px 20px;
     float: left;
+    height: inherit;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 5px;
 }
 
-.section_card .title {
+.section_card .section_card_title {
     font-size: 50px;
     font-weight: 300;
     padding: 10px 0 10px 5px;
+    margin-bottom: 30px;
 }
 
 .event_mod_card {
@@ -228,8 +250,13 @@
     font-size: 50px;
 }
 
+.explore_team_icon {
+    background-color: rgba(244, 255, 87, 0.8);
+}
+
 .explore_event_team_info {
     text-align: center;
+    padding-bottom: 10px;
 }
 
 .explore_event_team_info h4 {

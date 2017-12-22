@@ -1,6 +1,3 @@
-/**
- * Created by Nishan on 10/20/2017.
- */
 'use strict';
 
 angular.module('mainModule').config(['$routeProvider', '$locationProvider',

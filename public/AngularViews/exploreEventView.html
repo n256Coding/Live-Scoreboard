@@ -1,10 +1,11 @@
+<div class="background_image"></div>
 <br>
 <md-button flex-gt-md="15" flex="30" md-colors="{background: 'red'}" md-colors-watch="false" ng-hide="exploredEvent.live">
     Event summary
 </md-button>
 <md-grid-list md-cols="4" md-cols-sm="4" md-cols-md="4" md-row-height="200px">
     <md-grid-tile md-colspan="1">
-        <div class="explore_event_team_info">
+        <div class="explore_event_team_info section_card">
             <h4>{{exploredEvent.team1}}</h4>
             <h5>{{exploredEvent.team1_score}}</h5>
         </div>
@@ -13,17 +14,20 @@
         <h2>vs</h2>
     </md-grid-tile>
     <md-grid-tile md-colspan="1">
-        <div class="explore_event_team_info">
+        <div class="explore_event_team_info section_card">
             <h4>{{exploredEvent.team2}}</h4>
             <h5>{{exploredEvent.team2_score}}</h5>
         </div>
     </md-grid-tile>
     <md-grid-tile md-colspan="1">
+        <div class="explore_event_team_info section_card explore_team_icon">
         <img src="images/Cricket.png" layout-margin="5">
+        </div>
     </md-grid-tile>
+
     <md-grid-tile md-colspan="4">
         <div class="match_info">
-            <div class="title">
+            <div class="match_info_title">
                 <span>Info Feed</span>
             </div>
             <div class="content">
@@ -37,7 +41,7 @@
     </md-grid-tile>
     <md-grid-tile md-colspan="2">
         <div class="match_info">
-            <div class="title">
+            <div class="match_info_title">
                 <span>Match Info</span>
             </div>
             <div class="content">
@@ -47,7 +51,7 @@
     </md-grid-tile>
     <md-grid-tile md-colspan="2">
         <div class="match_info">
-            <div class="title">
+            <div class="match_info_title">
                 <span>Chat Box</span>
             </div>
             <div class="content">

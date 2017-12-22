@@ -1,6 +1,3 @@
-/**
- * Created by Nishan on 10/31/2017.
- */
 'use strict';
 
 angular.module('mainModule').factory('userControlService', ['$rootScope', function ($rootScope) {

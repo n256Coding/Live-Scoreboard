@@ -1,6 +1,3 @@
-/**
- * Created by Nishan on 10/20/2017.
- */
 'use strict';
 
 var express = require('express');
@@ -32,10 +29,11 @@ var sportEvents= [
                     'name':'event1',
                     'team1':'Lion',
                     'team2':'Dogs',
-                    'team1_score':26,
-                    'team2_score':32,
+                    'team1_score':0,
+                    'team2_score':1,
+                    'type':'Soccer',
+                    'icon':'images/Soccer Ball.png',
                     'description':'This will be a good match because both teams well experienced!',
-                    'date':'2017 August 23',
                     'live':false,
                     'chat':[]
                 },
@@ -46,11 +44,10 @@ var sportEvents= [
                     'team2':'Cats',
                     'team1_score':21,
                     'team2_score':35,
+                    'type':'Cricket',
+                    'icon':'images/Cricket.png',
                     'description':'Today is really fits for the match',
-                    'date':'2018 January 22',
-                    'startTime':'8 AM',
-                    'endTime':'11 AM',
-                    'live':false,
+                    'live':true,
                     'chat':[]
                 },
                 {
@@ -58,14 +55,13 @@ var sportEvents= [
                     'name':'event1',
                     'team1':'Cats',
                     'team2':'Monkeys',
-                    'team1_score':35,
-                    'team2_score':26,
-                    'description':'',
-                    'date':'2017 October 27',
-                    'startTime':'6 AM',
-                    'endTime':'8 AM',
+                    'team1_score':2,
+                    'team2_score':1,
+                    'type':'Badminton',
+                    'icon':'images/badminton.png',
+                    'description':'Match is going to really interesting!',
                     'score':'45',
-                    'live':true,
+                    'live':false,
                     'chat':[]
                 }
                 ];

@@ -1,8 +1,3 @@
-/**
- * Created by Nishan on 10/31/2017.
- */
-
-
 angular.module('mainModule').controller('userController', ['$scope', 'userControlService', '$location', '$rootScope',
     function ($scope, userControlService, $location, $rootScope) {
         $scope.user = {firstName:'Not Logged'};

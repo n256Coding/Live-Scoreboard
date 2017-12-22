@@ -1,8 +1,10 @@
- <div>
+<div class="background_image"></div>
+<div>
     <div class="page_title">New Event</div>
+    <div class="section_card">
     <md-grid-list md-cols="2" md-cols-md="4" md-cols-lg="6" md-row-height="1:1">
         <md-grid-tile layout-margin="10">
-                <a class="default_btn event_btn" md-ink-ripple="true" ng-click="setEventType('cricket')">
+                <a class="default_btn event_btn" md-ink-ripple="true" ng-click="setEventType('Cricket')">
                     <div>
                         <h4>Cricket</h4>
                         <img src="images/Cricket.png" layout-margin="5">
@@ -10,7 +12,7 @@
                 </a>
         </md-grid-tile>
         <md-grid-tile layout-margin="10">
-                <a class="default_btn event_btn" md-ink-ripple="true" ng-click="setEventType('football')">
+                <a class="default_btn event_btn" md-ink-ripple="true" ng-click="setEventType('Soccer')">
                     <div>
                         <h4>Football</h4>
                         <img src="images/Soccer%20Ball.png">
@@ -18,18 +20,18 @@
                 </a>
         </md-grid-tile>
         <md-grid-tile layout-margin="10">
-                <a class="default_btn event_btn" md-ink-ripple="true" ng-click="setEventType('rugby')">
+                <a class="default_btn event_btn" md-ink-ripple="true" ng-click="setEventType('Badminton')">
                     <div>
-                        <h4>Rugby</h4>
-                        <img src="images/Rugby%20ball.png" layout-fill>
+                        <h4>Badminton</h4>
+                        <img src="images/badminton.png" layout-fill>
                     </div>
                 </a>
         </md-grid-tile>
         <md-grid-tile layout-margin="10">
                 <a class="default_btn" md-ink-ripple="true">
                     <div>
-                        <h4>Custom</h4>
-                        <img src="images/Winner.jpg" layout-fill>
+                        <h4>Rugby</h4>
+                        <img src="images/Rugby%20ball.png" layout-fill>
                     </div>
                 </a>
         </md-grid-tile>
@@ -69,7 +71,7 @@
          </md-grid-tile>
          <md-grid-tile md-colspan="5">
              <div class="match_info">
-                 <div class="title">
+                 <div class="match_info_title">
                      <span>Match Info</span>
                  </div>
                  <div class="content">
@@ -79,4 +81,5 @@
          </md-grid-tile>
      </md-grid-list><br>
      <a class="md-button md-raised md-primary" ng-click="newEvent()">Publish to Live</a>
+    </div>
 </div>
