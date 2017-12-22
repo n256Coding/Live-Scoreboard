@@ -6,7 +6,12 @@ angular.module('mainModule').factory('userControlService', ['$rootScope', functi
     var myRecentEvents = [];
 
     function getUser() {
-        return user;
+        if(user.firstName == undefined){
+            return 'Anonymous';
+        }
+        else {
+            return user;
+        }
     }
 
     function setUser(userVar) {

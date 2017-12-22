@@ -9,6 +9,7 @@ angular.module('mainModule').controller('eventController', ['$scope', '$http', '
         $scope.chatScriptCache = [];
         $scope.message = {};
         $scope.score = {};
+        $scope.newsFeed = '';
 
         console.log(eventService.getSelectedEvent());
         $scope.initializeExploreInfo = function () {
@@ -30,10 +31,18 @@ angular.module('mainModule').controller('eventController', ['$scope', '$http', '
         $scope.sendMessage = function () {
             //socket.emit('chat_message_push_req', {message : message, eventId : $scope.selectedEvent.eventId});
             if($scope.message.content.trim() != ''){
-                var chat = {id:eventService.getUniqueId(), content:$scope.message.content, name:userControlService.getUser().firstName};
+                var chat = {id:eventService.getUniqueId(), content:$scope.message.content, name:userControlService.getUser().firstName, eventId:$scope.exploredEvent.eventId};
                 eventService.pushMessage(chat);
                 $scope.chatScriptCache.push(chat);
+                socket.emit('chat_message_push_req', chat);
                 $scope.message.content = '';
+            }
+        };
+
+        $scope.updateNewsFeed = function (event) {
+            if(event.keyCode === 13) {
+                $scope.newsFeed = $scope.newsFeed.concat(' \n', $scope.score.update);
+                $scope.score.update = '';
             }
         };
 

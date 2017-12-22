@@ -60,7 +60,7 @@
             </div>
             <div class="content">
                 <div class="chat_area">
-                    <div class="chat_item" ng-repeat="chat in chatScriptCache track by chat.id">
+                    <div class="chat_item" ng-repeat="chat in exploredEvent.chat track by chat.id">
                         {{chat.name}}: {{chat.content}}
                     </div>
                 </div>

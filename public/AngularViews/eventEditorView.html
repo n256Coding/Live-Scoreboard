@@ -46,13 +46,9 @@
         <div class="match_info">
             <div class="match_info_title">Info Feed Update</div>
             <div class="content">
-                FOUR! Angelo Mathews to Rohit Sharma. Length ball, outside off stump on the front foot driving,
-                well timed in the air under control past deep cover for 4 runs.
-                More width, and Sharma brings up a scintillating century with another beauty of a cover drive.
-                The Sri Lankan bowlers have had no clue where to bowl to him.
-                He might even have the chance to get a double century at the rate he is going!
+                {{newsFeed}}
                 <md-input-container class="md-block" flex-gt-sm="">
-                    <input class="score_inc_value_txt" ng-model="score.update">
+                    <input class="score_inc_value_txt" ng-model="score.update" ng-keypress="updateNewsFeed($event)">
                 </md-input-container>
             </div>
         </div>

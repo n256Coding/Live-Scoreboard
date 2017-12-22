@@ -91,10 +91,10 @@ io.on('connection', function (socket) {
         io.sockets.emit('recent_event_res', getRecentSportEvents());
     });
     socket.on('chat_message_push_req', function (data) {
-        var event = sportEvents.filter(function (item) {
-                        return item.eventId = data.eventId;
-                    });
-
+        var index = sportEvents.findIndex(x => x.eventId == data.eventId);
+        sportEvents[index].chat.push(data);
+        io.sockets.emit('live_event_res', getLiveSportEvents());
+        io.sockets.emit('recent_event_res', getRecentSportEvents());
     });
     socket.on('score_update_req', function (data) {
         var index = sportEvents.findIndex(x => x.eventId == data.eventId);
