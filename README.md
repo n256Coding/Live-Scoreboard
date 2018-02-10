@@ -7,6 +7,7 @@ This system is for demonstration purpose only and not properly developed for rea
 ##### Technologies
 * Node JS
 * Angular JS 1.6
+* Web Sockets (Socket.io)
 
 #### Getting Started
 * Make sure that you have installed nodeJS, bower and git correctly.
