@@ -13,7 +13,8 @@ This system is for demonstration purpose only and not properly developed for rea
 * Make sure that you have installed nodeJS, bower and git correctly.
 * Also make sure that you have working internet connection with 
 access to googleapis.com, cdnjs.cloudflare.com and code.getmdl.io
-* Navigate into folder which contains package.json in the project with command prompt (terminal)
+* Download or clone ``https://github.com/n256Coding/Live-Scoreboard.git`` repo into your local storage.
+* Navigate into folder which contains package.json in the downloaded/cloned project with command prompt (terminal)
 
 
 #### Configuring Instructions
